@@ -12,13 +12,26 @@ Right now it only supports Android theme formats: regular Telegram (`.attheme`) 
 
 ---
 
+## Previews
+
+**Chat View**
+![Chat View](docs/previews/chat-view.jpg)
+
+**Chats List**
+![Chats List](docs/previews/chats-list.jpg)
+
+**Profile View**
+![Profile View](docs/previews/profile-view.jpg)
+
+---
+
 ## Features
 
 - **Works on PC & Phones:** The app has a mobile layout too. If it's hosted online (like on Vercel), you can just open the link straight from your phone's browser. If you're running it locally from your PC, your phone can also access it over the same Wi-Fi network.
 - **Free Image Selection:** Upload or drag and drop any wallpaper image, with a built-in crop/rotate tool if you want to frame it first.
 - **Auto Color Generation (with manual control):** Pulls a palette straight from your wallpaper and builds a matching theme around it using different style formulas (`Material You Monet`, `iOS Frosted Accent`, `High Saturation`, `Pastel Soft`, `Duo-Tone Expressive`, `Deep Atmospheric`), across **Dark**, **Light**, or **OLED** modes. You can still tweak any seed color or type a hex code manually.
 - **Wallpaper Eyedropper:** Open the full image with a zoomed pixel loupe to pick the exact color you want directly off your wallpaper.
-- **Live Phone Preview:** Test messages, switch between the Chat screen and Chats list, and preview how everything looks in real time.
+- **Live Phone Preview:** Test messages, switch between Chat View, Chats List, and Profile, and preview how everything looks in real time.
 - **Import & Export:** Load existing `.attheme` files to edit them, or export ready-to-use `.attheme` (with wallpaper attached) and `.tgx-theme` files.
 
 ---
