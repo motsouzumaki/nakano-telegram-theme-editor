@@ -14,6 +14,7 @@ Right now it only supports Android theme formats: regular Telegram (`.attheme`) 
 
 ## Features
 
+- **Works on PC & Phones:** The app has a mobile layout too. If it's hosted online (like on Vercel), you can just open the link straight from your phone's browser. If you're running it locally from your PC, your phone can also access it over the same Wi-Fi network.
 - **Free Image Selection:** Upload or drag and drop any wallpaper image, with a built-in crop/rotate tool if you want to frame it first.
 - **Auto Color Generation (with manual control):** Pulls a palette straight from your wallpaper and builds a matching theme around it using different style formulas (`Material You Monet`, `iOS Frosted Accent`, `High Saturation`, `Pastel Soft`, `Duo-Tone Expressive`, `Deep Atmospheric`), across **Dark**, **Light**, or **OLED** modes. You can still tweak any seed color or type a hex code manually.
 - **Wallpaper Eyedropper:** Open the full image with a zoomed pixel loupe to pick the exact color you want directly off your wallpaper.
@@ -62,19 +63,36 @@ If you actually want to micromanage every pixel of the Telegram UI:
 
 ---
 
-## Running Locally
+## Running Locally on PC (and Using It on Your Phone)
 
-If you want to fork it, fix things yourself, or self-host it:
+Make sure you have [Node.js](https://nodejs.org/) installed first.
 
-```bash
-npm install
-npm run dev
-```
+1. Download the project:
+   - Either clone it with Git:
+     ```bash
+     git clone https://github.com/motsouzumaki/telegram-theme-editor-webapp.git
+     cd telegram-theme-editor-webapp
+     ```
+   - Or click **Code -> Download ZIP** on GitHub, extract it, and open a terminal inside the folder.
 
-To build for production:
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Start the app:
+   ```bash
+   npm run dev
+   ```
+   Open the `http://localhost:5173` link in your PC browser.
+
+4. **To open it on your phone over Wi-Fi:**
+   Because `vite.config.ts` already enables network access (`host: true`), Vite will also print a `Network` URL (something like `http://192.168.x.x:5173`). Make sure your phone is on the same Wi-Fi as your PC and open that Network link in your phone's browser.
+
+To build static production files for hosting (Vercel, Netlify, etc.):
 
 ```bash
 npm run build
 ```
 
-The production output is generated in `dist/`, ready for Vercel, Netlify, or any static host.
+The production output is generated in `dist/`.
