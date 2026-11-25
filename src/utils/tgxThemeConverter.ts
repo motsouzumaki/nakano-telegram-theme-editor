@@ -917,7 +917,7 @@ export function serializeTgxTheme(
 
   const lines: string[] = [
     '// Telegram X Theme (.tgx-theme)',
-    '// Converted from TeleTheme Studio (.attheme -> .tgx-theme)',
+    '// Converted from Nakano Telegram Theme Editor (.attheme -> .tgx-theme)',
     '!',
     `name: ${wrapTgxString(data.name)}`,
     `time: ${timestamp}`,
@@ -1008,7 +1008,7 @@ export async function createTgxZipThemePackage(
 
   const instructions = `=====================================================
 Telegram X Theme: ${themeName}
-Converted with TeleTheme Studio (.attheme -> .tgx-theme)
+Converted with Nakano Telegram Theme Editor (.attheme -> .tgx-theme)
 =====================================================
 
 HOW TO APPLY IN TELEGRAM X (ANDROID):

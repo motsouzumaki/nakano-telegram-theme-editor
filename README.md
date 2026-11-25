@@ -1,4 +1,4 @@
-# TeleTheme Studio
+# Nakano Telegram Theme Editor
 
 **Live App:** [https://telegram-theme-editor-webapp.vercel.app/](https://telegram-theme-editor-webapp.vercel.app/)
 
@@ -85,8 +85,8 @@ Make sure you have [Node.js](https://nodejs.org/) installed first.
 1. Download the project:
    - Either clone it with Git:
      ```bash
-     git clone https://github.com/motsouzumaki/telegram-theme-editor-webapp.git
-     cd telegram-theme-editor-webapp
+     git clone https://github.com/motsouzumaki/nakano-telegram-theme-editor.git
+     cd nakano-telegram-theme-editor
      ```
    - Or click **Code -> Download ZIP** on GitHub, extract it, and open a terminal inside the folder.
 

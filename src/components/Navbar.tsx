@@ -242,7 +242,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             </div>
             <div className="min-w-0 flex-1">
               <div className="font-bold text-[13.5px] leading-tight tracking-tight text-white truncate">
-                TeleTheme
+                Nakano Theme Editor
               </div>
               <div className="text-[10px] leading-tight text-slate-400 truncate">
                 {themeName || 'My Custom Android Theme'}
@@ -532,9 +532,9 @@ export const Navbar: React.FC<NavbarProps> = ({
           </div>
 
           <div className="flex items-center gap-2 shrink-0">
-            <span className="font-bold text-sm tracking-tight text-white">TeleTheme</span>
+            <span className="font-bold text-sm tracking-tight text-white">Nakano</span>
             <span className="hidden lg:inline-block text-[10px] uppercase font-semibold px-1.5 py-0.5 rounded bg-brand-500/20 text-brand-400 border border-brand-500/30 font-mono">
-              STUDIO v2.4
+              THEME EDITOR
             </span>
           </div>
 

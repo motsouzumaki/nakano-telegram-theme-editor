@@ -432,7 +432,7 @@ export async function createZipThemePackage(
   // 3. Add instructions
   const instructions = `=====================================================
 Telegram Android Theme: ${themeName}
-Created with TeleTheme Studio
+Created with Nakano Telegram Theme Editor
 =====================================================
 
 HOW TO APPLY ON TELEGRAM FOR ANDROID:
