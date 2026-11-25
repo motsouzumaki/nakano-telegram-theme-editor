@@ -99,10 +99,10 @@ Make sure you have [Node.js](https://nodejs.org/) installed first.
    ```bash
    npm run dev
    ```
-   Open the `http://localhost:5173` link in your PC browser.
+   Open the `Local` URL printed in your terminal (e.g. `http://localhost:xxxx`, defaulting to `5173` if free) in your PC browser.
 
 4. **To open it on your phone over Wi-Fi:**
-   Because `vite.config.ts` already enables network access (`host: true`), Vite will also print a `Network` URL (something like `http://192.168.x.x:5173`). Make sure your phone is on the same Wi-Fi as your PC and open that Network link in your phone's browser.
+   Because `vite.config.ts` already enables network access (`host: true`), Vite will also print a `Network` URL (something like `http://192.168.x.x:xxxx`). Make sure your phone is on the same Wi-Fi as your PC and open that `Network` link in your phone's browser.
 
 To build static production files for hosting (Vercel, Netlify, etc.):
 
