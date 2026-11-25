@@ -22,6 +22,7 @@ import {
 } from 'lucide-react';
 import type { StudioView, PreviewToggles } from '../types/theme';
 import { toCssColor } from '../utils/colorUtils';
+import appIcon from '../assets/app-icon.png';
 
 interface NavbarProps {
   themeName: string;
@@ -223,23 +224,11 @@ export const Navbar: React.FC<NavbarProps> = ({
         <header className="h-[52px] border-b border-surface-border bg-surface-panel/85 backdrop-blur-xl px-3 flex items-center justify-between gap-2 transition-colors duration-300">
           {/* Left: Compact Brand + Active Theme Name */}
           <div className="flex items-center gap-2 min-w-0 flex-1">
-            <div
-              className="h-8 w-8 rounded-xl flex items-center justify-center shadow-lg ring-1 ring-white/20 shrink-0 transition-all duration-500"
-              style={{
-                backgroundImage:
-                  'linear-gradient(135deg, var(--color-brand-600), var(--color-brand-500), var(--color-brand-secondary))',
-                boxShadow: '0 6px 16px -4px var(--color-brand-glow)',
-              }}
-            >
-              <svg
-                className="w-4.5 h-4.5 -rotate-12 translate-x-px"
-                style={{ color: 'var(--color-brand-on-primary)' }}
-                fill="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .39z" />
-              </svg>
-            </div>
+            <img
+              src={appIcon}
+              alt="Nakano Theme Editor"
+              className="h-8 w-8 shrink-0 object-contain drop-shadow-[0_4px_10px_rgba(235,75,56,0.35)]"
+            />
             <div className="min-w-0 flex-1">
               <div className="font-bold text-[13.5px] leading-tight tracking-tight text-white truncate">
                 Nakano Theme Editor
@@ -512,24 +501,12 @@ export const Navbar: React.FC<NavbarProps> = ({
       <header className="h-14 border-b border-surface-border bg-surface-panel/80 backdrop-blur-xl px-4 flex items-center justify-between gap-3 transition-colors duration-300">
         {/* Left branding & inline editable project title */}
         <div className="flex items-center gap-2.5 lg:gap-3 min-w-0">
-          {/* Telegram Studio Logo Gradient Icon (adapts to wallpaper accent & secondary) */}
-          <div
-            className="h-9 w-9 rounded-xl flex items-center justify-center shadow-lg ring-1 ring-white/20 shrink-0 transition-all duration-500"
-            style={{
-              backgroundImage:
-                'linear-gradient(135deg, var(--color-brand-600), var(--color-brand-500), var(--color-brand-secondary))',
-              boxShadow: '0 8px 20px -4px var(--color-brand-glow)',
-            }}
-          >
-            <svg
-              className="w-5 h-5 -rotate-12 translate-x-px"
-              style={{ color: 'var(--color-brand-on-primary)' }}
-              fill="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .39z" />
-            </svg>
-          </div>
+          {/* Nakano App Icon */}
+          <img
+            src={appIcon}
+            alt="Nakano Theme Editor"
+            className="h-9 w-9 shrink-0 object-contain drop-shadow-[0_6px_14px_rgba(235,75,56,0.35)]"
+          />
 
           <div className="flex items-center gap-2 shrink-0">
             <span className="font-bold text-sm tracking-tight text-white">Nakano</span>
