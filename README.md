@@ -1,5 +1,7 @@
 # TeleTheme Studio
 
+**Live App:** [https://telegram-theme-editor-webapp.vercel.app/](https://telegram-theme-editor-webapp.vercel.app/)
+
 Graphic design and Photoshop have been a hobby of mine for a while, so naturally I love messing around with shapes and colors. Telegram gives you a ridiculous amount of freedom to recolor almost everything in the app, which hooked me immediately.
 
 The annoying part was how complicated it actually is to make a theme from scratch. For a long time the easiest route was just grabbing themes people posted in Telegram groups (genuinely appreciate those creators), until I stumbled across an Android app that made theming way easier for casual users.
@@ -27,7 +29,7 @@ Right now it only supports Android theme formats: regular Telegram (`.attheme`) 
 
 ## Features
 
-- **Works on PC & Phones:** The app has a mobile layout too. If it's hosted online (like on Vercel), you can just open the link straight from your phone's browser. If you're running it locally from your PC, your phone can also access it over the same Wi-Fi network.
+- **Works on PC & Phones:** The app has a mobile layout too. You can open [the live web app](https://telegram-theme-editor-webapp.vercel.app/) straight from your phone's browser without needing a PC, or run it locally on your PC and open it from your phone over the same Wi-Fi network.
 - **Free Image Selection:** Upload or drag and drop any wallpaper image, with a built-in crop/rotate tool if you want to frame it first.
 - **Auto Color Generation (with manual control):** Pulls a palette straight from your wallpaper and builds a matching theme around it using different style formulas (`Material You Monet`, `iOS Frosted Accent`, `High Saturation`, `Pastel Soft`, `Duo-Tone Expressive`, `Deep Atmospheric`), across **Dark**, **Light**, or **OLED** modes. You can still tweak any seed color or type a hex code manually.
 - **Wallpaper Eyedropper:** Open the full image with a zoomed pixel loupe to pick the exact color you want directly off your wallpaper.
