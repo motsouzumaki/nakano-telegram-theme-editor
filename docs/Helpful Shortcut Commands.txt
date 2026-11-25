@@ -1,0 +1,6 @@
+Helpful Shortcut Commands
+Action	Command / Shortcut
+Start Live Dev Server	npm run dev
+Stop the Server	Press Ctrl + C in the terminal window
+Build for Production	npm run build
+Preview Built App	npm run preview
