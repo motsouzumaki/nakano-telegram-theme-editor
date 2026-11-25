@@ -1,73 +1,80 @@
-# 🎨 TeleTheme Studio
+# TeleTheme Studio
 
-An interactive, responsive web application for creating, previewing, and customizing **Telegram Android Themes (`.attheme`)** in real-time.
+Graphic design and Photoshop have been a hobby of mine for a while, so naturally I love messing around with shapes and colors. Telegram gives you a ridiculous amount of freedom to recolor almost everything in the app, which hooked me immediately.
+
+The annoying part was how complicated it actually is to make a theme from scratch. For a long time the easiest route was just grabbing themes people posted in Telegram groups (genuinely appreciate those creators), until I stumbled across an Android app that made theming way easier for casual users.
+
+I used that app for a bit, but even after exporting a theme from it I still had to go back into Telegram's built-in editor to fix random things. And as usual, digging through hundreds of cryptic variable names gave me a headache. At some point I remembered Antigravity was right there (not the first time I've used it to build a personal tool), so I spent about a month wrestling with it to put this web app together until it hit a "good enough" point that anyone can just open and use from their browser.
+
+I'm officially too lazy to keep maintaining or tweaking it from here on out, so do whatever you want with it.
+
+Right now it only supports Android theme formats: regular Telegram (`.attheme`) and Telegram X (`.tgx-theme`, minus embedded photo wallpapers since I never found a clean way to do that). As for Telegram Desktop, maybe I'll think about it later.
 
 ---
 
-## 🚀 Quick Start
+## Features
 
-### 1. Run the Development Server
+- **Free Image Selection:** Upload or drag and drop any wallpaper image, with a built-in crop/rotate tool if you want to frame it first.
+- **Auto Color Generation (with manual control):** Pulls a palette straight from your wallpaper and builds a matching theme around it using different style formulas (`Material You Monet`, `iOS Frosted Accent`, `High Saturation`, `Pastel Soft`, `Duo-Tone Expressive`, `Deep Atmospheric`), across **Dark**, **Light**, or **OLED** modes. You can still tweak any seed color or type a hex code manually.
+- **Wallpaper Eyedropper:** Open the full image with a zoomed pixel loupe to pick the exact color you want directly off your wallpaper.
+- **Live Phone Preview:** Test messages, switch between the Chat screen and Chats list, and preview how everything looks in real time.
+- **Import & Export:** Load existing `.attheme` files to edit them, or export ready-to-use `.attheme` (with wallpaper attached) and `.tgx-theme` files.
+
+---
+
+## Known Issues & Limitations
+
+- **Color bugs:** Some UI elements or edge-case contrast combinations still look off or don't map cleanly and may need a manual tweak.
+- **No Telegram Desktop support:** Only Android formats (`.attheme` and `.tgx-theme`) are supported right now.
+- **No embedded photo wallpapers for Telegram X:** `.tgx-theme` is a plain-text format and can't store raw image files like `.attheme` does. You'll either need to set your chat wallpaper manually inside Telegram X, or paste a `t.me/bg/...` cloud wallpaper link in the Export window.
+
+---
+
+## Quick Guide for Casual Users (Just Use the Studio Tab)
+
+If you just want a clean theme without touching code or weird variable names, stay in the **Studio** tab and ignore everything else:
+
+1. **Drop in a photo:** Drag an image onto the wallpaper box (or click **Change**) and crop it if needed.
+2. **Pick a base mode:** Choose **Dark**, **Light**, or **OLED**.
+3. **Pick a vibe:** Try a different **Formula / Style** from the dropdown, tap through the **Extracted Seeds** color squares, or hit **Pick** / **Pick from image** to grab a specific color from your photo with the eyedropper.
+4. **Adjust the backdrop & bubbles (optional):** Switch between **Solid**, **Gradient**, **Dots**, or **Photo**, and tweak blur, dim, bubble corner roundness, opacity, or message tails.
+5. **Export:** Hit **Export** at the top, download your `.attheme` (or `.tgx-theme`) file, and apply it in Telegram.
+
+---
+
+## For the Nerds (The Other Tabs)
+
+If you actually want to micromanage every pixel of the Telegram UI:
+
+- **Color Rail / Colors Tab** (left side on desktop, **Colors** tab on smaller screens): Quick-access editor for the main chrome, message bubbles, timestamps, checks, and accent tokens.
+- **Inspect Mode & Inspect Tab:** Turn on **Inspect** in the top bar and click directly on any part of the phone mockup (a bubble, header, badge, reply bar, etc.) to jump straight to that exact Telegram variable. Or open the **Inspect** tab to search and browse variables by section.
+- **Raw Tab:** View, edit, copy, or paste raw `key=value` `.attheme` code directly, switch between signed 32-bit ARGB integers and hex values, add custom variables manually, or run a quick structure/contrast check.
+- **Export Tab / Modal:** Switch between `.attheme` and `.tgx-theme`, copy raw output, download the processed wallpaper `.jpg` on its own, grab a `.zip` package, or attach a `t.me/bg/...` link for Telegram X.
+- **Preview Toggles:** Use the pills under the top bar to toggle reactions, muted channel state, search bar, voice note bar, mini audio player, and emoji hints in the phone preview.
+
+---
+
+## How to Apply a Theme on Android
+
+1. Download your `.attheme` (or `.tgx-theme`) file from the **Export** window.
+2. Open Telegram (or Telegram X) on your phone and send the file to **Saved Messages**.
+3. Tap the file in the chat and select **Apply Theme**.
+
+---
+
+## Running Locally
+
+If you want to fork it, fix things yourself, or self-host it:
+
 ```bash
+npm install
 npm run dev
 ```
-Open your browser at **[http://localhost:5173](http://localhost:5173)**.
 
-### 2. Build for Production
+To build for production:
+
 ```bash
 npm run build
 ```
-The optimized bundle is built to the `dist/` folder, ready for deployment to GitHub Pages, Vercel, Netlify, or Cloudflare Pages.
 
----
-
-## ✨ Features
-
-- **📱 Pixel-Perfect Android Simulator**:
-  - Realistic Android status bar, curved bezels, and punch-hole camera.
-  - Realistic incoming and outgoing message bubbles with authentic speech tails.
-  - Pinned message banner, link previews, interactive voice note waveform player, timestamps, and read checkmarks (`chat_outSentCheck`).
-  - Interactive test messaging: type any text into the message box on the phone and press Send to see your message in real-time.
-  - Dual View: Switch between **Chat View** and **Chats List (Home Screen)** with unread badges and pencil FAB button.
-
-- **🎯 "Inspect & Tap" Mode**:
-  - Hover over any element on the phone screen to see its Telegram variable name (e.g. `chat_outBubble`, `actionBarDefault`, `chat_messagePanelBackground`).
-  - Click on any element to instantly jump to that exact color parameter in the inspector editor!
-
-- **⚡ Material You (Monet) Engine**:
-  - Pick a single seed accent color or wallpaper tone.
-  - Automatically computes harmonious surface colors, bubble shades, and WCAG text contrast for Light, Dark, or true **Pitch Black AMOLED** modes.
-  - Sliders for bubble corner radius (0px to 24px) and speech bubble tails toggle.
-
-- **🎨 10 Curated Presets**:
-  - *Telegram Dark* (Official Classic)
-  - *Pure AMOLED Black* (True `#000000` power-saving)
-  - *Material You Sky* (Android 14/15 Monet Blue)
-  - *Material You Sage Forest* (Monet Earthy Green)
-  - *Catppuccin Mocha*
-  - *Cyberpunk 2077* (Neon Yellow & Cyan)
-  - *Telegram Light* (Official Classic Light)
-  - *Nord Arctic Frost*
-  - *Rosé Pine*
-  - *Sunset Terracotta*
-
-- **🖼️ Wallpaper Studio**:
-  - Solid Color background
-  - Linear Gradient generator with angle and dual-color stops
-  - Telegram Doodle Pattern overlay
-  - Custom image upload with blur (0–20px) and dimming overlay sliders.
-
-- **💾 Universal `.attheme` Import & Export**:
-  - **Export**: Generates standard Telegram Android `.attheme` files using signed 32-bit ARGB integers.
-  - **Wallpaper Bundling**: If a custom background photo is used, bundles `colors.attheme` + `wallpaper.jpg` into a valid `.attheme` ZIP file via JSZip.
-  - **Import**: Drag-and-drop any `.attheme` file (plain text or zipped) to parse and load it instantly.
-  - **Telegram Desktop (.tdesktop-palette)**: Bonus 1-click export for desktop users.
-
----
-
-## 📲 How to Apply a Theme on Telegram for Android
-
-1. In **TeleTheme Studio**, click **Export Theme** and download your `.attheme` file.
-2. Open the Telegram app on your Android phone.
-3. Send the downloaded `.attheme` file to your **Saved Messages** chat.
-4. Tap directly on the file inside Telegram and select **Apply Theme**.
-5. Your custom colors and wallpaper are applied immediately!
+The production output is generated in `dist/`, ready for Vercel, Netlify, or any static host.
